@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+:root {
+    --dark-gray: #403D3A;
+    --light-gray: #8C8680;
+    --dark-brown: #594736;
+    --medium-brown: #8C6F56;
+    --light-brown: #D9CEC5;
+    --header-font: novecento-sans-wide, sans-serif;
+    --text-font: hero-new, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 100vh auto auto auto 300px;
+}
+
+/*_generally for header, nav, and splash-images on each page_*/
+
+header {
+    grid-row: 1/2;
+    width: 100vw;
+}
+
+nav {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+}
+
+#home-but {
+    width: 150px;
+    align-self: flex-start;
+    padding: 20px 40px;
+}
+
+nav div {
+    display: flex;
+}
+
+nav a {
+    padding: 0 20px;
+    flex-shrink: 1;
+    text-decoration: none;
+    color: white;
+    font-family: var(--header-font);
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.splash {
+    width: 100vw;
+    height: 100%;
+    background-size: cover;
+    background-position: 0% 50%;
+    background-image: url("v-studio(3).png");
+}
+
+/*_generally for footer on all pages_*/
+
+footer {
+    grid-row: 5/6;
+    width: 100vw;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer .foot-column {
+    flex-grow: 1;
+    flex-basis: 200px;
+}
+
+footer img {
+    width: 200px;
+}
