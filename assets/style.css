@@ -18,14 +18,13 @@ img {
 }
 
 body {
-    display: grid;
-    grid-template-rows: 100vh auto auto auto 300px;
+    display: block;
 }
 
 /*_generally for header, nav, and splash-images on each page_*/
 
 header {
-    grid-row: 1/2;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -42,7 +41,10 @@ nav {
 #home-but {
     width: 150px;
     align-self: flex-start;
-    padding: 20px 40px;
+    margin: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 15px 20px;
 }
 
 nav div {
@@ -70,19 +72,81 @@ nav a {
 /*_generally for footer on all pages_*/
 
 footer {
-    grid-row: 5/6;
+    height: auto;
     width: 100vw;
     background-color: var(--light-gray);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 footer .foot-column {
-    flex-grow: 1;
-    flex-basis: 200px;
+    flex-shrink: 1;
+    flex-basis: 190px;
+    padding: 20px;
+    font-family: var(--text-font);
+    color: white;
 }
 
-footer img {
-    width: 200px;
+.footer_logo {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 175px;
+}
+
+
+/*_header fonts_*/
+
+h1,
+h2 {
+    font-family: var(--header-font);
+}
+
+/*_home-page_______________________________________________*/
+
+#intro {
+    margin: auto;
+    width: 400px;
+    background-color: #0000;
+}
+
+h1 {
+    color: white;
+    font-family: var(--header-font);
+    margin: -100px auto 0 auto;
+    font-size: 2.5rem;
+}
+
+#intro h3 {
+    color: black;
+    background-color: white;
+    font-family: var(--text-font);
+    font-style: italic;
+    font-weight: 400;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+#intro p {
+    color: black;
+    background-color: white;
+    font-family: var(--text-font);
+    padding: 0 40px 40px 40px;
+}
+
+/*_My Services section_*/
+
+section {
+    width: 100vw;
+    color: black;
+    background-color: var(--light-brown);
+}
+
+section h2 {
+    text-align: center;
+    margin: auto;
+    font-family: var(--header-font);
+    font-size: 2rem;
+    padding-top: 20px;
 }
