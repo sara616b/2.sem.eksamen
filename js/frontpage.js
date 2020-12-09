@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", getData);
 
 //variables
-let template = document.querySelector("template");
+let template = document.querySelector("#tempFP");
 let container = document.querySelector("#container");
+let templateContent = document.querySelector("#content_temp");
 
 //when doc is loaded page starts and gets data from wordpress
 async function getData() {
@@ -21,6 +22,9 @@ async function getData() {
 async function show(data) {
     console.log("show");
 
+    //featured image as background in splash
+    document.querySelector(".splash").style.backgroundImage = "url(" + data.splash.guid + ")";
+
     //title in h1
     document.querySelector("h1").innerHTML = data.title.rendered;
     //content in p
@@ -34,15 +38,111 @@ async function show(data) {
     //forEach-loop for the front page section elements
     jsonEl.forEach((section) => {
         console.log("forEach loop start");
+
         //cloning template
         const klon = template.cloneNode(true).content;
+
         //inserting data in clone
         klon.querySelector("h2").textContent = section.title.rendered;
         klon.querySelector("p").innerHTML = section.description;
+        klon.querySelector(".content").id = section.slug;
 
         //adding klon with content to container
         container.appendChild(klon);
         console.log("appendChild");
-    });
 
+        //add content according to which element it is
+        addContentFP(section.slug);
+
+    });
+}
+
+//add content to each of the front page sections
+async function addContentFP(name) {
+    console.log(name);
+
+    //variables for getting wordpress data
+    let linkSec;
+    let responsSec;
+    let jsonSec;
+
+    let i = 0;
+    let wrapper = document.querySelector("#" + name);
+
+    if (name == "my-services") {
+        console.log("services start");
+
+        //get wordpress data
+        linkSec = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/service";
+        responsSec = await fetch(linkSec);
+        jsonSec = await responsSec.json();
+
+        //forEach-loop for the services
+        jsonSec.forEach((service) => {
+            console.log("forEach loop start");
+
+            //cloning template
+            const klon = templateContent.cloneNode(true).content;
+
+            //inserting data in clone
+            klon.querySelector("img").src = service.icon.guid;
+            klon.querySelector("img").classList.add("icon");
+            klon.querySelector("h3").textContent = service.title.rendered;
+            klon.querySelector("p").innerHTML = service.content.rendered;
+            klon.querySelector("section").classList.add("service");
+
+            //adding klon with content to container
+            wrapper.appendChild(klon);
+            console.log("appendChild");
+        });
+
+    } else if (name == "customers") {
+        console.log("customer reviews start");
+
+
+
+        //get wordpress data
+        linkSec = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/customer";
+        responsSec = await fetch(linkSec);
+        jsonSec = await responsSec.json();
+
+        //add button left
+        let arrowButtonLeft = document.createElement("img");
+        arrowButtonLeft.src = "assets/Logo%20V%20Studio.png";
+        arrowButtonLeft.classList.add("arrowbuttonleft");
+        wrapper.appendChild(arrowButtonLeft);
+        arrowButtonLeft.addEventListener("click", newReview(jsonSec));
+
+        //get first review initially
+        await getReview(jsonSec);
+
+        //add button right
+        let arrowButtonRight = document.createElement("img");
+        arrowButtonRight.src = "assets/Logo%20V%20Studio.png";
+        arrowButtonRight.classList.add("arrowbuttonright");
+        wrapper.appendChild(arrowButtonRight);
+        arrowButtonRight.addEventListener("click", newReview(jsonSec));
+
+    }
+
+
+    async function getReview(jsonSec) {
+
+        const klon = templateContent.cloneNode(true).content;
+        //inserting data in clone
+        klon.querySelector("img").src = jsonSec[i].profilepic.guid;
+        klon.querySelector("h3").textContent = jsonSec[i].title.rendered;
+        klon.querySelector("p").innerHTML = jsonSec[i].content.rendered;
+
+        //adding class to allow css
+        klon.querySelector("section").classList.add("review");
+
+        //adding klon with content to container
+        wrapper.appendChild(klon);
+        console.log("appendChild");
+    }
+
+    function newReview(i) {
+
+    }
 }
