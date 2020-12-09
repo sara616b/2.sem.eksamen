@@ -36,6 +36,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: absolute;
+    z-index: 2;
 }
 
 #home-but {
@@ -67,6 +68,8 @@ nav a {
     background-size: cover;
     background-position: 0% 50%;
     background-image: url("v-studio(3).png");
+    filter: brightness(50%);
+    z-index: 0;
 }
 
 /*_generally for footer on all pages_*/
@@ -107,8 +110,11 @@ h2 {
 
 #intro {
     margin: auto;
-    width: 400px;
+    width: 80vw;
+    max-width: 1000px;
     background-color: #0000;
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
@@ -118,14 +124,20 @@ h1 {
     font-size: 2.5rem;
 }
 
-#intro h3 {
+#intro blockquote {
     color: black;
     background-color: white;
     font-family: var(--text-font);
     font-style: italic;
     font-weight: 400;
-    padding: 20px;
-    font-size: 2rem;
+    font-size: 3rem;
+    padding-top: 20px;
+}
+
+/*_makes quotetation marks around quote on frontpage_*/
+#intro blockquote p:before,
+#intro blockquote p:after {
+    content: '"';
 }
 
 #intro p {
@@ -135,18 +147,25 @@ h1 {
     padding: 0 40px 40px 40px;
 }
 
-/*_My Services section_*/
+/*_front page sections (serives, work, costumers)_*/
 
-section {
+.fp_element {
     width: 100vw;
     color: black;
     background-color: var(--light-brown);
 }
 
-section h2 {
+.fp_element h2 {
     text-align: center;
     margin: auto;
     font-family: var(--header-font);
-    font-size: 2rem;
+    font-size: 3rem;
     padding-top: 20px;
+}
+
+.fp_element p {
+    font-family: var(--text-font);
+    width: 500px;
+    margin: auto;
+    padding-bottom: 20px;
 }
