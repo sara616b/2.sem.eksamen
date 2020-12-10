@@ -109,7 +109,6 @@ async function addContentFP(name) {
         arrowButtonLeft.src = "assets/Logo%20V%20Studio.png";
         arrowButtonLeft.classList.add("arrowbuttonleft");
         wrapper.appendChild(arrowButtonLeft);
-        arrowButtonLeft.addEventListener("click", newReview(jsonSec));
 
         //get first review initially
         let containerReviews = document.createElement("section");
@@ -122,16 +121,23 @@ async function addContentFP(name) {
         arrowButtonRight.src = "assets/Logo%20V%20Studio.png";
         arrowButtonRight.classList.add("arrowbuttonright");
         wrapper.appendChild(arrowButtonRight);
-        arrowButtonRight.addEventListener("click", newReview(jsonSec));
+
+        //add eventlisteners to arrows for them to scroll through reviews
+        arrowButtonRight.addEventListener("click", function () {
+            console.log("click scroll right");
+            containerReviews.scrollLeft += 1000;
+        });
+        arrowButtonLeft.addEventListener("click", function () {
+            console.log("click scroll left");
+            containerReviews.scrollLeft -= 1000;
+        });
 
     }
 
-
     async function getReview(jsonSec) {
-
-        //inserting data in clone
+        console.log("getReviews");
         jsonSec.forEach((review) => {
-
+            //inserting data in clone
             const klon = templateContent.cloneNode(true).content;
 
             klon.querySelector("img").src = review.profilepic.guid;
@@ -144,11 +150,7 @@ async function addContentFP(name) {
             //adding klon with content to container
             document.querySelector("#containerReviews").appendChild(klon);
             console.log("appendChild");
-
         })
     }
 
-    function newReview(i) {
-
-    }
 }
