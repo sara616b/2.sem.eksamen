@@ -251,3 +251,19 @@ h1 {
     white-space: nowrap;
     scroll-snap-type: y mandatory;
 }
+
+/*_code to hide scroolbar in #containerReviews is taken from w3schools*/
+/* Hide scrollbar for Chrome, Safari and Opera */
+#containerReviews::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#containerReviews {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/*_end of code from w3schools_*/
