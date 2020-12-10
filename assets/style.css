@@ -221,7 +221,7 @@ h1 {
 }
 
 .review {
-    width: auto;
+    width: 100%;
     margin: auto;
     padding: 40px;
 
@@ -239,4 +239,13 @@ h1 {
     height: 150px;
     padding: 40px;
     border-radius: 50%;
+}
+
+
+#containerReviews {
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    white-space: nowrap;
 }

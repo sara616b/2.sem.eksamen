@@ -99,8 +99,6 @@ async function addContentFP(name) {
     } else if (name == "customers") {
         console.log("customer reviews start");
 
-
-
         //get wordpress data
         linkSec = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/customer";
         responsSec = await fetch(linkSec);
@@ -114,6 +112,9 @@ async function addContentFP(name) {
         arrowButtonLeft.addEventListener("click", newReview(jsonSec));
 
         //get first review initially
+        let containerReviews = document.createElement("section");
+        containerReviews.id = "containerReviews";
+        wrapper.appendChild(containerReviews);
         await getReview(jsonSec);
 
         //add button right
@@ -128,18 +129,23 @@ async function addContentFP(name) {
 
     async function getReview(jsonSec) {
 
-        const klon = templateContent.cloneNode(true).content;
         //inserting data in clone
-        klon.querySelector("img").src = jsonSec[i].profilepic.guid;
-        klon.querySelector("h3").textContent = jsonSec[i].title.rendered;
-        klon.querySelector("p").innerHTML = jsonSec[i].content.rendered;
+        jsonSec.forEach((review) => {
 
-        //adding class to allow css
-        klon.querySelector("section").classList.add("review");
+            const klon = templateContent.cloneNode(true).content;
 
-        //adding klon with content to container
-        wrapper.appendChild(klon);
-        console.log("appendChild");
+            klon.querySelector("img").src = review.profilepic.guid;
+            klon.querySelector("h3").textContent = review.title.rendered;
+            klon.querySelector("p").innerHTML = review.content.rendered;
+
+            //adding class to allow css
+            klon.querySelector("section").classList.add("review");
+
+            //adding klon with content to container
+            document.querySelector("#containerReviews").appendChild(klon);
+            console.log("appendChild");
+
+        })
     }
 
     function newReview(i) {
