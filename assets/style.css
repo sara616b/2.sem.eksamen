@@ -224,7 +224,8 @@ h1 {
     width: 100%;
     margin: auto;
     padding: 40px;
-
+    flex-shrink: 0;
+    scroll-snap-align: start;
 }
 
 .review img {
@@ -248,4 +249,5 @@ h1 {
     flex-direction: row;
     width: 60vw;
     white-space: nowrap;
+    scroll-snap-type: y mandatory;
 }
