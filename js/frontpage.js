@@ -126,14 +126,18 @@ async function addContentFP(name) {
         //add eventlisteners to arrows for them to scroll through reviews
 
         let increment = 0;
-        containerReviews.scrollRight -= 10000;
+        let reviewWidth = document.querySelector(".review").offsetWidth;
+        console.log(reviewWidth);
+        containerReviews.scrollLeft = 0;
         arrowButtonLeft.style.opacity = 0.5;
+
         arrowButtonRight.addEventListener("click", function () {
-            if (increment < ((jsonSec.length - 1) * 1000)) {
+            reviewWidth = document.querySelector(".review").offsetWidth;
+            if (increment < ((jsonSec.length - 1) * reviewWidth)) {
                 console.log("click scroll left");
-                containerReviews.scrollLeft += 1000;
-                increment += 1000;
-                if (increment == ((jsonSec.length - 1) * 1000)) {
+                containerReviews.scrollLeft += reviewWidth;
+                increment += reviewWidth;
+                if (increment == ((jsonSec.length - 1) * reviewWidth)) {
                     arrowButtonRight.style.opacity = 0.5;
                     console.log("end reached");
                 }
@@ -141,21 +145,18 @@ async function addContentFP(name) {
             }
         });
         arrowButtonLeft.addEventListener("click", function () {
+            reviewWidth = document.querySelector(".review").offsetWidth;
             if (increment > 0) {
                 console.log("click scroll left");
-                containerReviews.scrollLeft -= 1000;
-                increment -= 1000;
+                containerReviews.scrollLeft -= reviewWidth;
+                increment -= reviewWidth;
                 if (increment == 0) {
                     arrowButtonLeft.style.opacity = 0.5;
                     console.log("end reached");
                 }
                 arrowButtonRight.style.opacity = 1;
             }
-
         });
-
-
-
     }
 
     async function getReview(jsonSec) {
