@@ -45,6 +45,7 @@ async function show(data) {
         //inserting data in clone
         klon.querySelector("h2").textContent = section.title.rendered;
         klon.querySelector("p").innerHTML = section.description;
+        klon.querySelector("section").id = section.slug + "sec";
         klon.querySelector(".content").id = section.slug;
 
         //adding klon with content to container
@@ -123,14 +124,37 @@ async function addContentFP(name) {
         wrapper.appendChild(arrowButtonRight);
 
         //add eventlisteners to arrows for them to scroll through reviews
+
+        let increment = 0;
+        containerReviews.scrollRight -= 10000;
+        arrowButtonLeft.style.opacity = 0.5;
         arrowButtonRight.addEventListener("click", function () {
-            console.log("click scroll right");
-            containerReviews.scrollLeft += 1000;
+            if (increment < ((jsonSec.length - 1) * 1000)) {
+                console.log("click scroll left");
+                containerReviews.scrollLeft += 1000;
+                increment += 1000;
+                if (increment == ((jsonSec.length - 1) * 1000)) {
+                    arrowButtonRight.style.opacity = 0.5;
+                    console.log("end reached");
+                }
+                arrowButtonLeft.style.opacity = 1;
+            }
         });
         arrowButtonLeft.addEventListener("click", function () {
-            console.log("click scroll left");
-            containerReviews.scrollLeft -= 1000;
+            if (increment > 0) {
+                console.log("click scroll left");
+                containerReviews.scrollLeft -= 1000;
+                increment -= 1000;
+                if (increment == 0) {
+                    arrowButtonLeft.style.opacity = 0.5;
+                    console.log("end reached");
+                }
+                arrowButtonRight.style.opacity = 1;
+            }
+
         });
+
+
 
     }
 
@@ -142,7 +166,7 @@ async function addContentFP(name) {
 
             klon.querySelector("img").src = review.profilepic.guid;
             klon.querySelector("h3").textContent = review.title.rendered;
-            klon.querySelector("p").innerHTML = review.content.rendered;
+            klon.querySelector("p").innerHTML = review.review;
 
             //adding class to allow css
             klon.querySelector("section").classList.add("review");

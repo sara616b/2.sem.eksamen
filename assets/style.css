@@ -218,6 +218,7 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 40px 0;
 }
 
 .review {
@@ -226,12 +227,26 @@ h1 {
     padding: 40px;
     flex-shrink: 0;
     scroll-snap-align: start;
+    display: grid;
+    grid-template-areas: 'review review review review''pic name name name';
+}
+
+.review h3 {
+    grid-area: name;
+    margin: auto 0;
+}
+
+.review p {
+    grid-area: review;
+    padding: 20px;
+    white-space: normal;
 }
 
 .review img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    grid-area: pic;
 }
 
 .arrowbuttonright,
