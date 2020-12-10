@@ -1,0 +1,71 @@
+#intro p {
+    background-color: #0000;
+    color: white;
+}
+
+#info {
+    box-shadow: 0 0 5px #838383;
+    display: flex;
+    flex-direction: row;
+    margin: -50px auto 40px auto;
+    width: 80vw;
+    z-index: 2;
+    position: relative;
+}
+
+h2 {
+    font-family: var(--text-font);
+}
+
+#formular {
+    padding: 20px;
+    background-color: white;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+#formular input {
+    width: 100%;
+    color: #9d9d9d;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 3px #d1d1d1;
+}
+
+#formular p {
+    font-size: 0.8rem;
+    padding: 10px;
+}
+
+#formular button {
+    background-color: var(--light-gray);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: var(--text-font);
+    cursor: pointer;
+}
+
+#sidebar {
+    padding: 20px;
+    background-color: var(--light-brown);
+    width: 40%;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+.contact_info img {
+    width: 30px;
+}
