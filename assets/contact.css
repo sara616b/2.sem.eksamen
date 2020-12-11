@@ -69,3 +69,34 @@ h2 {
 .contact_info img {
     width: 30px;
 }
+
+/*_about page_*/
+#about {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 80vw;
+    margin: -50px auto 40px auto;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 5px #838383;
+}
+
+#about section {
+    padding: 40px;
+    overflow: hidden;
+    background-color: white;
+}
+
+#about section:nth-child(1),
+#about section:nth-child(4) {
+    background-color: var(--light-brown);
+}
+
+#about div img {
+    height: 100%;
+}
+
+#about h2 {
+    padding-bottom: 20px;
+
+}

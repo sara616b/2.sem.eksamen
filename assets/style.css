@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     width: 100%;
 }
@@ -19,6 +23,8 @@ img {
 
 body {
     display: block;
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
 }
 
 /*_generally for header, nav, and splash-images on each page_*/
@@ -165,6 +171,7 @@ h1 {
     font-family: var(--header-font);
     font-size: 3rem;
     padding: 20px 0;
+    text-transform: uppercase;
 }
 
 .fp_element p {
@@ -211,6 +218,56 @@ h1 {
     font-family: var(--text-font);
 }
 
+/*_my work section_*/
+
+#my-work {
+    display: grid;
+    grid-template-areas: "left-button work right-button";
+
+}
+
+#my-work #containerProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-rows: 1fr;
+    margin: 40px auto;
+    width: 60vw;
+    overflow-x: scroll;
+    grid-area: work;
+    scroll-behavior: smooth;
+}
+
+.projectbuttonright {
+    grid-area: right-button;
+}
+
+.projectbuttonleft {
+    grid-area: left-button;
+    transform: rotate(180deg);
+}
+
+#my-work #containerProjects section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-gray);
+    justify-content: space-between;
+    grid-row: 1/2;
+    width: 250px;
+}
+
+#my-work #containerProjects section:nth-child(even) {
+    background-color: var(--light-brown);
+    flex-direction: column-reverse;
+}
+
+#my-work #containerProjects section div {
+    padding: 20px;
+}
+
+#my-work section div h3 {
+    padding-bottom: 20px;
+}
+
 /*_customer review section_*/
 
 #customers {
@@ -252,7 +309,9 @@ h1 {
 }
 
 .arrowbuttonright,
-.arrowbuttonleft {
+.arrowbuttonleft,
+.projectbuttonright,
+.projectbuttonleft {
     width: 150px;
     height: 150px;
     padding: 40px;
@@ -266,6 +325,7 @@ h1 {
 
 .arrowbuttonleft {
     grid-area: but-left;
+    transform: rotate(180deg);
 }
 
 #containerReviews {
@@ -276,16 +336,19 @@ h1 {
     width: 60vw;
     white-space: nowrap;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
-/*_code to hide scroolbar in #containerReviews is taken from w3schools*/
+/*_code to hide scroolbar in #containerReviews and #containerProjects is taken from w3schools*/
 /* Hide scrollbar for Chrome, Safari and Opera */
-#containerReviews::-webkit-scrollbar {
+#containerReviews::-webkit-scrollbar,
+#containerProjects::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-#containerReviews {
+#containerReviews,
+#containerProjects {
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;

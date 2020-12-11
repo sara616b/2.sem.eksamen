@@ -97,6 +97,82 @@ async function addContentFP(name) {
             console.log("appendChild");
         });
 
+    } else if (name == "my-work") {
+        console.log("my work start");
+
+        //get wordpress data
+        linkSec = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/project";
+        responsSec = await fetch(linkSec);
+        jsonSec = await responsSec.json();
+
+        //add button left
+        let projectButtonLeft = document.createElement("img");
+        projectButtonLeft.src = "assets/next.svg";
+        projectButtonLeft.classList.add("projectbuttonleft");
+        wrapper.appendChild(projectButtonLeft);
+
+        //get reviews and add to section#containerReviews
+        let containerProjects = document.createElement("section");
+        containerProjects.id = "containerProjects";
+        wrapper.appendChild(containerProjects);
+        //add each project
+        jsonSec.forEach((project) => {
+            const klonPro = templateContent.cloneNode(true).content;
+
+            //insert data in clone
+            klonPro.querySelector("img").src = project.picture.guid;
+            klonPro.querySelector("img").alt = project.picture.name;
+            klonPro.querySelector("h3").textContent = project.title.rendered;
+            klonPro.querySelector("p").innerHTML = project.content.rendered;
+
+            //adding class to allow css
+            klonPro.querySelector("section").classList.add("project");
+            //append child
+            document.querySelector("#containerProjects").appendChild(klonPro);
+        })
+
+        //add button right
+        let projectButtonRight = document.createElement("img");
+        projectButtonRight.src = "assets/next.svg";
+        projectButtonRight.classList.add("projectbuttonright");
+        wrapper.appendChild(projectButtonRight);
+
+        //add eventlisteners to arrows for them to scroll through reviews
+
+        let increment = 0;
+        let projectWidth = document.querySelector(".project").offsetWidth;
+        console.log(projectWidth);
+        document.querySelector("#containerProjects").scrollLeft = 0;
+        projectButtonLeft.style.opacity = 0.5;
+
+        projectButtonRight.addEventListener("click", function () {
+            projectWidth = document.querySelector(".project").offsetWidth;
+            if (document.querySelector("#containerProjects").scrollWidth > (increment + document.querySelector("#containerProjects").offsetWidth)) {
+                console.log("click scroll left");
+                document.querySelector("#containerProjects").scrollLeft += projectWidth;
+                increment += projectWidth;
+
+                if (document.querySelector("#containerProjects").scrollWidth < (increment + document.querySelector("#containerProjects").offsetWidth)) {
+                    projectButtonRight.style.opacity = 0.5;
+                    console.log("end reached");
+                }
+                projectButtonLeft.style.opacity = 1;
+            }
+        });
+        projectButtonLeft.addEventListener("click", function () {
+            projectWidth = document.querySelector(".project").offsetWidth;
+            if (increment > 0) {
+                console.log("click scroll left");
+                document.querySelector("#containerProjects").scrollLeft -= projectWidth;
+                increment -= projectWidth;
+                if (increment == 0) {
+                    projectButtonLeft.style.opacity = 0.5;
+                    console.log("end reached");
+                }
+                projectButtonRight.style.opacity = 1;
+            }
+        });
+
     } else if (name == "customers") {
         console.log("customer reviews start");
 
@@ -107,19 +183,34 @@ async function addContentFP(name) {
 
         //add button left
         let arrowButtonLeft = document.createElement("img");
-        arrowButtonLeft.src = "assets/Logo%20V%20Studio.png";
+        arrowButtonLeft.src = "assets/next.svg";
         arrowButtonLeft.classList.add("arrowbuttonleft");
         wrapper.appendChild(arrowButtonLeft);
 
-        //get first review initially
+        //get reviews and add to section#containerReviews
         let containerReviews = document.createElement("section");
         containerReviews.id = "containerReviews";
         wrapper.appendChild(containerReviews);
-        await getReview(jsonSec);
+        console.log("getReviews");
+        jsonSec.forEach((review) => {
+            //inserting data in clone
+            const klon = document.querySelector("#review-temp").cloneNode(true).content;
+
+            klon.querySelector("img").src = review.profilepic.guid;
+            klon.querySelector("h3").textContent = review.title.rendered;
+            klon.querySelector("p").innerHTML = review.review;
+
+            //adding class to allow css
+            klon.querySelector("section").classList.add("review");
+
+            //adding klon with content to container
+            document.querySelector("#containerReviews").appendChild(klon);
+            console.log("appendChild");
+        })
 
         //add button right
         let arrowButtonRight = document.createElement("img");
-        arrowButtonRight.src = "assets/Logo%20V%20Studio.png";
+        arrowButtonRight.src = "assets/next.svg";
         arrowButtonRight.classList.add("arrowbuttonright");
         wrapper.appendChild(arrowButtonRight);
 
@@ -157,25 +248,6 @@ async function addContentFP(name) {
                 arrowButtonRight.style.opacity = 1;
             }
         });
-    }
-
-    async function getReview(jsonSec) {
-        console.log("getReviews");
-        jsonSec.forEach((review) => {
-            //inserting data in clone
-            const klon = templateContent.cloneNode(true).content;
-
-            klon.querySelector("img").src = review.profilepic.guid;
-            klon.querySelector("h3").textContent = review.title.rendered;
-            klon.querySelector("p").innerHTML = review.review;
-
-            //adding class to allow css
-            klon.querySelector("section").classList.add("review");
-
-            //adding klon with content to container
-            document.querySelector("#containerReviews").appendChild(klon);
-            console.log("appendChild");
-        })
     }
 
 }
