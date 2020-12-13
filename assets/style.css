@@ -27,6 +27,10 @@ body {
     /* Hide horizontal scrollbar */
 }
 
+.hidden {
+    display: none;
+}
+
 /*_generally for header, nav, and splash-images on each page_*/
 
 header {
@@ -356,3 +360,51 @@ h1 {
 }
 
 /*_end of code from w3schools_*/
+
+
+/*_MEDIA QUERIES___________________________________________________*/
+
+
+/*_Burger Menu when screen less than 850px wide_*/
+@media only screen and (max-width: 850px) {
+    nav div {
+        flex-direction: column;
+    }
+
+    .hidemenu {
+        display: none;
+    }
+
+    nav div a {
+        padding: 10px;
+    }
+
+    .hidden {
+        display: block;
+    }
+
+    nav section {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+    }
+
+    nav button {
+        background-color: #0000;
+        color: white;
+        border: none;
+        align-self: flex-end;
+        padding: 20px;
+        font-size: 3rem;
+    }
+}
+
+/*_resize logo in top when screen less than 400px_*/
+
+@media only screen and (max-width: 400px) {
+    #home-but {
+        width: 90px;
+        padding: 10px 15px;
+    }
+
+}
