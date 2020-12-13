@@ -76,7 +76,7 @@ nav a {
     width: 100vw;
     height: 100%;
     background-size: cover;
-    background-position: 0% 50%;
+    background-position: 15% 50%;
     filter: brightness(50%);
     z-index: 0;
 }
@@ -364,6 +364,77 @@ h1 {
 
 /*_MEDIA QUERIES___________________________________________________*/
 
+/*_font-size_*/
+@media only screen and (max-width: 850px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 60%;
+    }
+
+    #containerProjects {
+        width: 70vw;
+    }
+}
+
+/*_front page changes_*/
+
+@media only screen and (max-width: 850px) {
+    #intro p {
+        padding: 0 15px 15px 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .fp_element {
+        padding: 0 25px;
+    }
+
+    .fp_element p {
+        width: auto;
+    }
+
+    .review img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .review {
+        padding: 15px;
+    }
+
+    #customers {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #my-services {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .service {
+        margin: 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+    .arrowbuttonright,
+    .arrowbuttonleft,
+    .projectbuttonright,
+    .projectbuttonleft {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+}
 
 /*_Burger Menu when screen less than 850px wide_*/
 @media only screen and (max-width: 850px) {
