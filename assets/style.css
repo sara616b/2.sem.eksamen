@@ -376,6 +376,10 @@ h1 {
         font-size: 60%;
     }
 
+    html p {
+        font-size: 120%;
+    }
+
     #containerProjects {
         width: 70vw;
     }

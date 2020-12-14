@@ -78,7 +78,7 @@ h2 {
 /*_about page_*/
 #about {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
     width: 80vw;
     margin: -50px auto 40px auto;
     position: relative;
@@ -112,5 +112,10 @@ h2 {
     #info,
     #about {
         margin: -20px auto 40px auto;
+    }
+
+    #about {
+
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     }
 }
