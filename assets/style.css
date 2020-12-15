@@ -119,8 +119,6 @@ footer .foot-column {
 }
 
 .footer_logo {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
     width: 175px;
 }
 
@@ -165,7 +163,7 @@ h1 {
     font-family: var(--text-font);
     font-style: italic;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2.9rem;
     padding-top: 20px;
 }
 
@@ -237,6 +235,7 @@ h1 {
 .service h3 {
     font-family: var(--header-font);
     padding: 20px;
+    text-align: center;
 }
 
 .service p {
