@@ -31,6 +31,23 @@ body {
     display: none;
 }
 
+/*_hover-effekter_*/
+
+nav a:hover,
+footer a:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
+
+
+.arrowbuttonright:hover,
+.arrowbuttonleft:hover,
+.projectbuttonright:hover,
+.projectbuttonleft:hover,
+button:hover {
+    opacity: 0.7;
+}
+
 /*_generally for header, nav, and splash-images on each page_*/
 
 header {
@@ -105,6 +122,10 @@ footer .foot-column {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     width: 175px;
+}
+
+footer img {
+    width: 30px;
 }
 
 
@@ -318,6 +339,7 @@ h1 {
     padding: 40px;
     border-radius: 50%;
     margin: auto;
+    cursor: pointer;
 }
 
 .arrowbuttonright {
