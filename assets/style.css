@@ -277,9 +277,6 @@ h1 {
 #customers {
     display: grid;
     grid-template-areas: 'but-left content but-right';
-    /*flex-direction: row;
-    justify-content: space-between;
-    align-items: center;*/
     padding: 40px 0;
 }
 
