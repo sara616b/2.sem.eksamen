@@ -67,7 +67,7 @@ nav {
     z-index: 2;
 }
 
-nav p {
+nav h2 {
     color: white;
     padding-top: 40px;
     font-size: 1rem;
@@ -97,6 +97,7 @@ nav a {
     font-family: var(--header-font);
     font-style: normal;
     font-size: 1rem;
+    text-transform: uppercase;
 }
 
 .splash {
@@ -165,6 +166,7 @@ h1 {
     font-family: var(--header-font);
     margin: -200px auto 0 auto;
     font-size: 5rem;
+    text-transform: uppercase;
 }
 
 #intro blockquote {
@@ -520,7 +522,7 @@ h1 {
         margin: 0;
     }
 
-    #start_nav p {
+    #start_nav h2 {
         padding: 10px;
     }
 
