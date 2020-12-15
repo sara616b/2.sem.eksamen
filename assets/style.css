@@ -496,6 +496,10 @@ h1 {
 
 /*_Burger Menu when screen less than 1050px wide_*/
 @media only screen and (max-width: 1050px) {
+    nav {
+        align-items: flex-start;
+    }
+
     nav div {
         flex-direction: column;
     }
