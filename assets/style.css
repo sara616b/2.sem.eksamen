@@ -495,7 +495,7 @@ h1 {
 }
 
 /*_Burger Menu when screen less than 1050px wide_*/
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1130px) {
     nav {
         align-items: flex-start;
     }
@@ -534,7 +534,7 @@ h1 {
 
 /*_resize logo in top when screen less than 500px_*/
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 560px) {
     #home-but {
         width: 75px;
         padding: 0;
@@ -543,6 +543,27 @@ h1 {
 
     #start_nav h2 {
         padding: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    #home-but {
+        width: 50px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #start_nav h2 {
+        padding: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    #start_nav h2 {
+        display: none;
     }
 
 }
