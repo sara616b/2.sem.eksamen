@@ -122,6 +122,7 @@ nav a {
     background-position: 15% 50%;
     filter: brightness(50%);
     z-index: 0;
+    min-height: 360px;
 }
 
 /*_generally for footer on all pages_*/
@@ -388,24 +389,26 @@ h1 {
     scroll-behavior: smooth;
 }
 
-/*_code to hide scroolbar in #containerReviews and #containerProjects is taken from w3schools*/
-/* Hide scrollbar for Chrome, Safari and Opera */
-#containerReviews::-webkit-scrollbar,
-#containerProjects::-webkit-scrollbar {
-    display: none;
+@media only screen and (min-width: 900px) {
+
+    /*_code to hide scroolbar in #containerReviews and #containerProjects is taken from w3schools*/
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    #containerReviews::-webkit-scrollbar,
+    #containerProjects::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    #containerReviews,
+    #containerProjects {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    /*_end of code from w3schools_*/
 }
-
-/* Hide scrollbar for IE, Edge and Firefox */
-#containerReviews,
-#containerProjects {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
-
-/*_end of code from w3schools_*/
-
 
 /*_MEDIA QUERIES___________________________________________________*/
 
@@ -424,7 +427,9 @@ h1 {
     html p {
         font-size: 130%;
     }
-
+    html #intro p {
+        font-size: 100%;
+    }
     #containerProjects {
         width: 70vw;
     }
@@ -532,6 +537,37 @@ h1 {
     }
 }
 
+
+/*_Arrows to scroll through projects disappears at 900px and scrollbar appears again_*/
+@media only screen and (max-width: 900px) {
+
+    .arrowbuttonright,
+    .arrowbuttonleft,
+    .projectbuttonright,
+    .projectbuttonleft {
+        display: none;
+    }
+
+    #containerReviews::-webkit-scrollbar,
+    #containerProjects::-webkit-scrollbar {
+        display: auto;
+    }
+
+    /* show scrollbar for IE, Edge and Firefox */
+    #containerReviews,
+    #containerProjects {
+        -ms-overflow-style: auto;
+        /* IE and Edge */
+        scrollbar-width: auto;
+        /* Firefox */
+    }
+
+    #my-work #containerProjects,
+    #containerReviews {
+        width: 90vw;
+    }
+}
+
 /*_resize logo in top when screen less than 500px_*/
 
 @media only screen and (max-width: 560px) {
@@ -543,6 +579,10 @@ h1 {
 
     #start_nav h2 {
         padding: 10px;
+    }
+
+    #start_nav {
+        padding-top: 20px;
     }
 
 }
@@ -564,6 +604,14 @@ h1 {
 
     #start_nav h2 {
         display: none;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #intro blockquote {
+        font-size: 2rem;
     }
 
 }
