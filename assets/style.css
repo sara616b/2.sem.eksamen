@@ -185,7 +185,7 @@ h1 {
     text-transform: uppercase;
 }
 
-#intro blockquote {
+#intro blockquote p {
     color: black;
     background-color: white;
     font-family: var(--text-font);
@@ -206,6 +206,7 @@ h1 {
     background-color: white;
     font-family: var(--text-font);
     padding: 0 40px 40px 40px;
+    font-size: 1.2rem;
 }
 
 /*_front page sections (serives, work, costumers)_*/
@@ -414,22 +415,29 @@ h1 {
 
 /*_font-size_*/
 @media only screen and (max-width: 850px) {
-    html {
-        font-size: 80%;
+    #intro blockquote p {
+        font-size: 2rem;
+    }
+
+    #intro p,
+    p {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    html {
-        font-size: 60%;
+    #intro blockquote p {
+        font-size: 1.5rem;
     }
 
-    html p {
-        font-size: 130%;
+    .fp_element h2 {
+        font-size: 2rem;
     }
-    html #intro p {
-        font-size: 100%;
-    }
+
     #containerProjects {
         width: 70vw;
     }
@@ -440,6 +448,10 @@ h1 {
 @media only screen and (max-width: 850px) {
     #intro p {
         padding: 0 15px 15px 15px;
+    }
+
+    nav div a {
+        font-size: 80%;
     }
 }
 
@@ -463,6 +475,11 @@ h1 {
 
     #customers {
         padding: 0;
+    }
+
+
+    #start_nav h2 {
+        font-size: 0.7rem;
     }
 }
 
@@ -600,7 +617,7 @@ h1 {
 
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
 
     #start_nav h2 {
         display: none;
