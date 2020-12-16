@@ -90,7 +90,7 @@ nav h2 {
 
 nav section {
     align-self: baseline;
-    padding-top: 38px;
+    padding-top: 40px;
 }
 
 #start_nav {
@@ -202,7 +202,7 @@ h1 {
     font-style: italic;
     font-weight: 400;
     font-size: 2.9rem;
-    padding-top: 20px;
+    padding: 50px 20px;
 }
 
 /*_makes quotetation marks around quote on frontpage_*/
@@ -333,6 +333,23 @@ h1 {
 
 .project p {
     line-height: 170%;
+}
+
+#my-worksec a {
+    background-color: var(--dark-gray);
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+    line-height: 60px;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+#my-worksec a:hover {
+    opacity: 0.8;
 }
 
 /*_customer review section_*/
@@ -563,8 +580,9 @@ h1 {
         color: white;
         border: none;
         align-self: flex-end;
-        padding: 20px;
+        padding: 0 20px;
         font-size: 3rem;
+        margin-top: -15px;
     }
 }
 
@@ -614,6 +632,10 @@ h1 {
 
     #start_nav {
         padding-top: 20px;
+    }
+
+    nav button {
+        margin-top: -30px;
     }
 
 }
