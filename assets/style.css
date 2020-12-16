@@ -88,6 +88,11 @@ nav h2 {
     font-size: 1rem;
 }
 
+nav section {
+    align-self: baseline;
+    padding-top: 38px;
+}
+
 #start_nav {
     display: flex;
     justify-content: flex-start;
@@ -147,11 +152,15 @@ footer .foot-column {
 
 .footer_logo {
     width: 175px;
+    padding-top: 0;
 }
 
 footer img {
-    width: 30px;
+    width: 47px;
+    padding-top: 20px;
 }
+
+
 
 
 /*_header fonts_*/
@@ -183,6 +192,7 @@ h1 {
     margin: -200px auto 0 auto;
     font-size: 5rem;
     text-transform: uppercase;
+    padding-bottom: 20px;
 }
 
 #intro blockquote p {
@@ -281,7 +291,7 @@ h1 {
 
 #my-work #containerProjects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
+    grid-template-columns: repeat(auto-fill, 300px);
     grid-template-rows: 1fr;
     margin: 40px auto;
     width: 60vw;
@@ -305,7 +315,7 @@ h1 {
     background-color: var(--light-gray);
     justify-content: space-between;
     grid-row: 1/2;
-    width: 250px;
+    width: 300px;
 }
 
 #my-work #containerProjects section:nth-child(even) {
@@ -319,6 +329,10 @@ h1 {
 
 #my-work section div h3 {
     padding-bottom: 20px;
+}
+
+.project p {
+    line-height: 170%;
 }
 
 /*_customer review section_*/

@@ -44,7 +44,7 @@ async function show(data) {
 
         //inserting data in clone
         klon.querySelector("h2").textContent = section.title.rendered;
-        klon.querySelector("p").innerHTML = section.description;
+        klon.querySelector("p").innerHTML = section.description + "<br>" + section.content.rendered;
         klon.querySelector("section").id = section.slug + "sec";
         klon.querySelector(".content").id = section.slug;
 
