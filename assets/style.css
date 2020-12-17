@@ -145,6 +145,7 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    padding: 40px 0;
 }
 
 footer .foot-column {
@@ -230,6 +231,7 @@ h1 {
     width: 100vw;
     color: black;
     background-color: var(--light-brown);
+    padding: 40px 0;
 }
 
 .fp_element h2 {

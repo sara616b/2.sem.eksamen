@@ -43,27 +43,4 @@ async function show(data) {
         document.querySelector("#about").appendChild(klon);
     })
 
-
-    /*console.log("addEventListeners");
-    document.querySelectorAll(".subNav").forEach((btn) => {
-        btn.addEventListener("click", navButtons);
-        console.log("virker");
-    });*/
-
 }
-
-/*function navButtons() {
-    console.log("klik");
-    console.log(this.textContent);
-
-    let sectionId;
-    if (this.textContent == "My Work") {
-        sectionId = "my-worksec";
-    } else if (this.textContent == "My Services") {
-        sectionId = "my-servicessec";
-    } else if (this.textContent == "Customers Said") {
-        sectionId = "customerssec";
-    }
-
-    location.href = "index.html" + "#" +
-}*/
