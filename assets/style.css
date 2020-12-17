@@ -605,7 +605,7 @@ h1 {
 
     #containerReviews::-webkit-scrollbar,
     #containerProjects::-webkit-scrollbar {
-        display: auto;
+        display: block;
     }
 
     /* show scrollbar for IE, Edge and Firefox */

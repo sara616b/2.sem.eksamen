@@ -250,4 +250,7 @@ async function addContentFP(name) {
         });
     }
 
+    //navigate to section via #
+    window.location.hash = "#" + window.location.hash.substr(1);
+
 }
