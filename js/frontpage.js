@@ -251,6 +251,10 @@ async function addContentFP(name) {
     }
 
     //navigate to section via #
-    window.location.hash = "#" + window.location.hash.substr(1);
+    nav();
 
 }
+
+function nav() {
+    window.location.search = window.location.hash.substr(1);
+};
