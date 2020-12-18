@@ -14,11 +14,11 @@ img {
 :root {
     --dark-gray: #403D3A;
     --light-gray: #ececec;
-    --footer: #898989;
+    --footer: #403D3A;
     --dark-brown: #594736;
     --medium-brown: #8C6F56;
     --light-brown: #f6f6f6;
-    --fp-el: #D9CEC5;
+    --fp-el: #403D3A;
     --header-font: novecento-sans-wide, sans-serif;
     --text-font: hero-new, sans-serif;
 }
@@ -79,20 +79,22 @@ header {
 }
 
 nav {
-    width: 98%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: relative;
     z-index: 2;
+    width: 80vw;
+    margin: auto;
+    max-width: 1000px;
 }
 
 nav h2 {
     color: white;
     padding-top: 40px;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 nav section {
@@ -104,12 +106,13 @@ nav section {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
+    padding-left: 0;
 }
 
 #home-but {
-    width: 150px;
+    width: 90px;
     align-self: flex-start;
-    margin: 20px 40px;
+    margin: 20px 20px 0px 0;
 }
 
 nav div {
@@ -127,9 +130,13 @@ nav a {
     text-transform: uppercase;
 }
 
+nav a:last-of-type {
+    padding-right: 0;
+}
+
 .splash {
     width: 100%;
-    height: 100vh;
+    height: 400px;
     background-size: cover;
     background-position: 15% 50%;
     filter: brightness(50%);
@@ -149,6 +156,7 @@ footer {
     flex-wrap: nowrap;
     justify-content: space-around;
     padding: 40px 0;
+    margin-top: 80px;
 }
 
 footer .foot-column {
@@ -157,6 +165,7 @@ footer .foot-column {
     padding: 20px;
     font-family: var(--text-font);
     color: white;
+    min-width: 220px;
 }
 
 .footer_logo {
@@ -198,8 +207,8 @@ p {
 h1 {
     color: white;
     font-family: var(--header-font);
-    margin: -200px auto 0 auto;
-    font-size: 5rem;
+    margin: -55vh auto 0 auto;
+    font-size: 4rem;
     text-transform: uppercase;
     padding-bottom: 20px;
 }
@@ -211,7 +220,7 @@ h1 {
     font-style: italic;
     font-weight: 400;
     font-size: 2.9rem;
-    padding: 50px 20px;
+    padding: 30px 20px;
 }
 
 /*_makes quotetation marks around quote on frontpage_*/
@@ -224,7 +233,7 @@ h1 {
     color: black;
     background-color: white;
     font-family: var(--text-font);
-    padding: 0 40px 40px 40px;
+    padding: 0 40px 15px 40px;
     font-size: 1.2rem;
 }
 
@@ -243,6 +252,7 @@ video {
     width: 100vw;
     color: black;
     background-color: var(--fp-el);
+    margin-top: 60px;
     padding: 40px 0;
 }
 
@@ -253,6 +263,7 @@ video {
     font-size: 3rem;
     padding: 20px 0;
     text-transform: uppercase;
+    color: white;
 }
 
 .fp_element p {
@@ -260,6 +271,8 @@ video {
     width: 500px;
     margin: auto;
     padding-bottom: 20px;
+    color: white;
+    line-height: 170%;
 }
 
 /*_my services section_*/
@@ -283,7 +296,7 @@ video {
     align-items: center;
     background-color: var(--light-gray);
     margin: 60px 20px;
-    padding: 10px 40px 20px 40px;
+    padding: 25px 40px 20px 40px;
 }
 
 .service:nth-of-type(2) {
@@ -294,10 +307,12 @@ video {
     font-family: var(--header-font);
     padding: 20px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .service p {
     font-family: var(--text-font);
+    line-height: 170%;
 }
 
 /*_my work section_*/
@@ -354,7 +369,8 @@ video {
     line-height: 170%;
 }
 
-#my-worksec a {
+#my-worksec a,
+#about a {
     background-color: var(--light-gray);
     color: black;
     text-align: center;
@@ -365,6 +381,7 @@ video {
     display: inline-block;
     width: 100%;
     text-transform: uppercase;
+    font-family: var(--text-font)
 }
 
 #my-worksec a:hover {
@@ -399,6 +416,7 @@ video {
     grid-area: review;
     padding: 20px;
     white-space: normal;
+    line-height: 170%;
 }
 
 .review img {
@@ -567,14 +585,15 @@ video {
     }
 }
 
-/*_Burger Menu when screen less than 1050px wide_*/
-@media only screen and (max-width: 1130px) {
+/*_Burger Menu when screen less than 1150px wide_*/
+@media only screen and (max-width: 1150px) {
     nav {
         align-items: flex-start;
     }
 
     nav div {
         flex-direction: column;
+        background-color: var(--fp-el);
     }
 
     .hidemenu {
@@ -593,6 +612,8 @@ video {
         display: flex;
         flex-direction: column;
         align-self: flex-start;
+        position: absolute;
+        right: 0;
     }
 
     nav button {
@@ -600,7 +621,6 @@ video {
         color: white;
         border: none;
         align-self: flex-end;
-        padding: 0 20px;
         font-size: 3rem;
         margin-top: -15px;
     }
