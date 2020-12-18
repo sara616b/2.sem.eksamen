@@ -126,13 +126,14 @@ nav a {
 }
 
 .splash {
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     background-size: cover;
     background-position: 15% 50%;
     filter: brightness(50%);
     z-index: 0;
     min-height: 360px;
+    position: relative;
 }
 
 /*_generally for footer on all pages_*/
@@ -227,8 +228,7 @@ h1 {
 
 /*_VIDEO____________________________________________________________________*/
 video {
-
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     min-width: 100%;
