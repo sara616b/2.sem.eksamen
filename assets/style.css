@@ -178,10 +178,7 @@ footer img {
     padding-top: 20px;
 }
 
-.foot_headline {
-    text-transform: uppercase;
-    font-weight: bolder;
-}
+
 
 
 
@@ -501,6 +498,11 @@ video {
     h1 {
         font-size: 3rem;
     }
+
+    .foot_headline {
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -527,6 +529,7 @@ video {
     nav div a {
         font-size: 80%;
     }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -589,6 +592,7 @@ video {
         flex-direction: column;
         align-items: center;
     }
+
 }
 
 /*_Burger Menu when screen less than 1150px wide_*/
@@ -711,6 +715,11 @@ video {
 
     #intro blockquote {
         font-size: 2rem;
+    }
+
+    .foot_headline {
+        text-transform: uppercase;
+        font-weight: bolder;
     }
 
 }
