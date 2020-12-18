@@ -499,11 +499,6 @@ video {
         font-size: 3rem;
     }
 
-    .foot_headline {
-        text-transform: uppercase;
-        font-weight: bolder;
-    }
-}
 
 @media only screen and (max-width: 400px) {
     #intro blockquote p {
@@ -717,9 +712,6 @@ video {
         font-size: 2rem;
     }
 
-    .foot_headline {
-        text-transform: uppercase;
-        font-weight: bolder;
-    }
+
 
 }
