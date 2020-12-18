@@ -23,7 +23,9 @@ async function show(data) {
     console.log("show");
 
     //featured image as background in splash
-    document.querySelector(".splash").style.backgroundImage = "url(" + data.splash.guid + ")";
+    //document.querySelector(".splash").style.backgroundImage = "url(" + data.splash.guid + ")";
+    document.querySelector("video").src = "assets/BG_video.mp4";
+    document.querySelector("video").playbackRate = 0.7;
 
     //title in h1
     document.querySelector("h1").innerHTML = data.title.rendered;

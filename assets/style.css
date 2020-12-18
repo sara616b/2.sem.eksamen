@@ -225,6 +225,16 @@ h1 {
     font-size: 1.2rem;
 }
 
+/*_VIDEO____________________________________________________________________*/
+video {
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 /*_front page sections (serives, work, costumers)_*/
 
 .fp_element {
