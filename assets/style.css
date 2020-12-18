@@ -207,7 +207,7 @@ p {
 h1 {
     color: white;
     font-family: var(--header-font);
-    margin: -55vh auto 0 auto;
+    margin: -300px auto 0 auto;
     font-size: 4rem;
     text-transform: uppercase;
     padding-bottom: 20px;
