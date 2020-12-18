@@ -13,10 +13,12 @@ img {
 
 :root {
     --dark-gray: #403D3A;
-    --light-gray: #8C8680;
+    --light-gray: #ececec;
+    --footer: #898989;
     --dark-brown: #594736;
     --medium-brown: #8C6F56;
-    --light-brown: #D9CEC5;
+    --light-brown: #f6f6f6;
+    --fp-el: #D9CEC5;
     --header-font: novecento-sans-wide, sans-serif;
     --text-font: hero-new, sans-serif;
 }
@@ -141,7 +143,7 @@ nav a {
 footer {
     height: auto;
     width: 100vw;
-    background-color: var(--light-gray);
+    background-color: var(--footer);
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -240,7 +242,7 @@ video {
 .fp_element {
     width: 100vw;
     color: black;
-    background-color: var(--light-brown);
+    background-color: var(--fp-el);
     padding: 40px 0;
 }
 
@@ -353,8 +355,8 @@ video {
 }
 
 #my-worksec a {
-    background-color: var(--dark-gray);
-    color: white;
+    background-color: var(--light-gray);
+    color: black;
     text-align: center;
     margin-top: 20px;
     text-decoration: none;
