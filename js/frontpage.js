@@ -31,7 +31,7 @@ async function show(data) {
     //title in h1
     document.querySelector("h1").innerHTML = data.title.rendered;
     //content in p
-    document.querySelector("#intro p").innerHTML = data.content.rendered;
+    document.querySelector("#intro div").innerHTML = data.content.rendered;
 
     //get json data for the front page elements
     const linkEl = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/forsideelement";
@@ -92,7 +92,7 @@ async function addContentFP(name) {
             klon.querySelector("img").src = service.icon.guid;
             klon.querySelector("img").classList.add("icon");
             klon.querySelector("h3").textContent = service.title.rendered;
-            klon.querySelector("p").innerHTML = service.content.rendered;
+            klon.querySelector("div").innerHTML = service.content.rendered;
             klon.querySelector("section").classList.add("service");
 
             //adding klon with content to container
@@ -110,6 +110,7 @@ async function addContentFP(name) {
 
         //add button left
         let projectButtonLeft = document.createElement("img");
+        projectButtonLeft.alt = "button";
         projectButtonLeft.src = "assets/next.svg";
         projectButtonLeft.classList.add("projectbuttonleft");
         wrapper.appendChild(projectButtonLeft);
@@ -126,7 +127,7 @@ async function addContentFP(name) {
             klonPro.querySelector("img").src = project.picture.guid;
             klonPro.querySelector("img").alt = project.picture.name;
             klonPro.querySelector("h3").textContent = project.title.rendered;
-            klonPro.querySelector("p").innerHTML = project.content.rendered;
+            klonPro.querySelector("div").innerHTML = project.content.rendered;
 
             //adding class to allow css
             klonPro.querySelector("section").classList.add("project");
@@ -136,6 +137,7 @@ async function addContentFP(name) {
 
         //add button right
         let projectButtonRight = document.createElement("img");
+        projectButtonRight.alt = "button";
         projectButtonRight.src = "assets/next.svg";
         projectButtonRight.classList.add("projectbuttonright");
         wrapper.appendChild(projectButtonRight);
@@ -186,6 +188,7 @@ async function addContentFP(name) {
 
         //add button left
         let arrowButtonLeft = document.createElement("img");
+        arrowButtonLeft.alt = "button";
         arrowButtonLeft.src = "assets/next.svg";
         arrowButtonLeft.classList.add("arrowbuttonleft");
         wrapper.appendChild(arrowButtonLeft);
@@ -214,6 +217,7 @@ async function addContentFP(name) {
         //add button right
         let arrowButtonRight = document.createElement("img");
         arrowButtonRight.src = "assets/next.svg";
+        arrowButtonRight.alt = "button";
         arrowButtonRight.classList.add("arrowbuttonright");
         wrapper.appendChild(arrowButtonRight);
 

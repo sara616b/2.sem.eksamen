@@ -23,5 +23,5 @@ async function show(data) {
     //title in h1
     document.querySelector("h1").innerHTML = data.title.rendered;
     //description in p
-    document.querySelector("p").innerHTML = data.content.rendered;
+    document.querySelector("#intro div").innerHTML = data.content.rendered;
 }

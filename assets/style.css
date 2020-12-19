@@ -475,7 +475,7 @@ video {
     #containerProjects {
         -ms-overflow-style: none;
         /* IE and Edge */
-        scrollbar-width: none;
+        /*scrollbar-width: none;___værdien validerer ikke, så vi udkommenterede den for opgaven. var man ligeglad med denne lille valideringsfejl ville det være pænnerer at have scrollbaren hidden*/
         /* Firefox */
     }
 
@@ -498,220 +498,219 @@ video {
     h1 {
         font-size: 3rem;
     }
+}
 
-
-    @media only screen and (max-width: 400px) {
-        #intro blockquote p {
-            font-size: 1.5rem;
-        }
-
-        .fp_element h2 {
-            font-size: 2rem;
-        }
-
-        #containerProjects {
-            width: 70vw;
-        }
+@media only screen and (max-width: 400px) {
+    #intro blockquote p {
+        font-size: 1.5rem;
     }
 
-    /*_front page changes_*/
-
-    @media only screen and (max-width: 850px) {
-        #intro p {
-            padding: 0 15px 15px 15px;
-        }
-
-        nav div a {
-            font-size: 80%;
-        }
-
+    .fp_element h2 {
+        font-size: 2rem;
     }
 
-    @media only screen and (max-width: 600px) {
-        .fp_element {
-            padding: 0 25px;
-        }
+    #containerProjects {
+        width: 70vw;
+    }
+}
 
-        .fp_element p {
-            width: auto;
-        }
+/*_front page changes_*/
 
-        .review img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .review {
-            padding: 15px;
-        }
-
-        #customers {
-            padding: 0;
-        }
-
-
-        #start_nav h2 {
-            font-size: 0.7rem;
-        }
+@media only screen and (max-width: 850px) {
+    #intro p {
+        padding: 0 15px 15px 15px;
     }
 
-    @media only screen and (max-width: 900px) {
-        #my-services {
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0;
-        }
-
-        .service {
-            margin: 30px 20px;
-            padding: 40px;
-        }
+    nav div a {
+        font-size: 80%;
     }
 
-    @media only screen and (max-width: 760px) {
+}
 
-        .arrowbuttonright,
-        .arrowbuttonleft,
-        .projectbuttonright,
-        .projectbuttonleft {
-            width: 50px;
-            height: 50px;
-            padding: 5px;
-        }
+@media only screen and (max-width: 600px) {
+    .fp_element {
+        padding: 0 25px;
+    }
+
+    .fp_element p {
+        width: auto;
+    }
+
+    .review img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .review {
+        padding: 15px;
+    }
+
+    #customers {
+        padding: 0;
     }
 
 
-    /*_footer when screen less than 850px wide_*/
-    @media only screen and (max-width: 650px) {
-        footer {
-            flex-direction: column;
-            align-items: center;
-        }
+    #start_nav h2 {
+        font-size: 0.7rem;
+    }
+}
 
+@media only screen and (max-width: 900px) {
+    #my-services {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
     }
 
-    /*_Burger Menu when screen less than 1150px wide_*/
-    @media only screen and (max-width: 1150px) {
-        nav {
-            align-items: flex-start;
-        }
+    .service {
+        margin: 30px 20px;
+        padding: 40px;
+    }
+}
 
-        nav div {
-            flex-direction: column;
-            background-color: var(--fp-el);
-        }
+@media only screen and (max-width: 760px) {
 
-        .hidemenu {
-            display: none;
-        }
+    .arrowbuttonright,
+    .arrowbuttonleft,
+    .projectbuttonright,
+    .projectbuttonleft {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+}
 
-        nav div a {
-            padding: 10px;
-        }
 
-        .hidden {
-            display: block;
-        }
-
-        nav section {
-            display: flex;
-            flex-direction: column;
-            align-self: flex-start;
-            position: absolute;
-            right: 0;
-        }
-
-        nav button {
-            background-color: #0000;
-            color: white;
-            border: none;
-            align-self: flex-end;
-            font-size: 3rem;
-            margin-top: -15px;
-        }
+/*_footer when screen less than 850px wide_*/
+@media only screen and (max-width: 650px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
     }
 
+}
 
-    /*_Arrows to scroll through projects disappears at 900px and scrollbar appears again_*/
-    @media only screen and (max-width: 900px) {
-
-        .arrowbuttonright,
-        .arrowbuttonleft,
-        .projectbuttonright,
-        .projectbuttonleft {
-            display: none;
-        }
-
-        #containerReviews::-webkit-scrollbar,
-        #containerProjects::-webkit-scrollbar {
-            display: block;
-        }
-
-        /* show scrollbar for IE, Edge and Firefox */
-        #containerReviews,
-        #containerProjects {
-            -ms-overflow-style: auto;
-            /* IE and Edge */
-            scrollbar-width: auto;
-            /* Firefox */
-        }
-
-        #my-work #containerProjects,
-        #containerReviews {
-            width: 90vw;
-        }
+/*_Burger Menu when screen less than 1150px wide_*/
+@media only screen and (max-width: 1150px) {
+    nav {
+        align-items: flex-start;
     }
 
-    /*_resize logo in top when screen less than 500px_*/
-
-    @media only screen and (max-width: 560px) {
-        #home-but {
-            width: 75px;
-            padding: 0;
-            margin: 0;
-        }
-
-        #start_nav h2 {
-            padding: 10px;
-        }
-
-        #start_nav {
-            padding-top: 20px;
-        }
-
-        nav button {
-            margin-top: -30px;
-        }
-
+    nav div {
+        flex-direction: column;
+        background-color: var(--fp-el);
     }
 
-    @media only screen and (max-width: 420px) {
-        #home-but {
-            width: 50px;
-            padding: 0;
-            margin: 0;
-        }
-
-        #start_nav h2 {
-            padding: 5px;
-        }
-
+    .hidemenu {
+        display: none;
     }
 
-    @media only screen and (max-width: 360px) {
-
-        #start_nav h2 {
-            display: none;
-        }
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        #intro blockquote {
-            font-size: 2rem;
-        }
-
-
-
+    nav div a {
+        padding: 10px;
     }
+
+    .hidden {
+        display: block;
+    }
+
+    nav section {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        position: absolute;
+        right: 0;
+    }
+
+    nav button {
+        background-color: #0000;
+        color: white;
+        border: none;
+        align-self: flex-end;
+        font-size: 3rem;
+        margin-top: -15px;
+    }
+}
+
+
+/*_Arrows to scroll through projects disappears at 900px and scrollbar appears again_*/
+@media only screen and (max-width: 900px) {
+
+    .arrowbuttonright,
+    .arrowbuttonleft,
+    .projectbuttonright,
+    .projectbuttonleft {
+        display: none;
+    }
+
+    #containerReviews::-webkit-scrollbar,
+    #containerProjects::-webkit-scrollbar {
+        display: block;
+    }
+
+    /* show scrollbar for IE, Edge and Firefox */
+    #containerReviews,
+    #containerProjects {
+        /*
+        -ms-overflow-style: auto;*/
+        /* IE and Edge */
+        /*
+        scrollbar-width: auto;*/
+        /* Firefox */
+    }
+
+    #my-work #containerProjects,
+    #containerReviews {
+        width: 90vw;
+    }
+}
+
+/*_resize logo in top when screen less than 500px_*/
+
+@media only screen and (max-width: 560px) {
+    #home-but {
+        width: 75px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #start_nav h2 {
+        padding: 10px;
+    }
+
+    #start_nav {
+        padding-top: 20px;
+    }
+
+    nav button {
+        margin-top: -30px;
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+    #home-but {
+        width: 50px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #start_nav h2 {
+        padding: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+
+    #start_nav h2 {
+        display: none;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    #intro blockquote {
+        font-size: 2rem;
+    }
+}

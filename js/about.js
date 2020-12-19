@@ -24,7 +24,7 @@ async function show(data) {
     //title in h1
     document.querySelector("h1").innerHTML = data.title.rendered;
     //description in p
-    document.querySelector("p").innerHTML = data.content.rendered;
+    document.querySelector("#intro div").innerHTML = data.content.rendered;
 
     //get data from about-info-posts
     const linkAI = "https://sarahfrederiksen.dk/kea/2_semester/eksamen/wordpress/wp-json/wp/v2/about-info";
