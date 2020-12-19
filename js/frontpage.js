@@ -92,7 +92,7 @@ async function addContentFP(name) {
             klon.querySelector("img").src = service.icon.guid;
             klon.querySelector("img").classList.add("icon");
             klon.querySelector("h3").textContent = service.title.rendered;
-            klon.querySelector("div").innerHTML = service.content.rendered;
+            klon.querySelector("div div").innerHTML = service.content.rendered;
             klon.querySelector("section").classList.add("service");
 
             //adding klon with content to container
@@ -127,7 +127,7 @@ async function addContentFP(name) {
             klonPro.querySelector("img").src = project.picture.guid;
             klonPro.querySelector("img").alt = project.picture.name;
             klonPro.querySelector("h3").textContent = project.title.rendered;
-            klonPro.querySelector("div").innerHTML = project.content.rendered;
+            klonPro.querySelector("div div").innerHTML = project.content.rendered;
 
             //adding class to allow css
             klonPro.querySelector("section").classList.add("project");
