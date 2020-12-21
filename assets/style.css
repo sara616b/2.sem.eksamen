@@ -1,3 +1,5 @@
+/*_common for all the pages___________________________________________________________________________________________________*/
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -11,6 +13,7 @@ img {
     width: 100%;
 }
 
+/*_variables for colors and fonts_*/
 :root {
     --dark-gray: #403D3A;
     --light-gray: #ececec;
@@ -71,7 +74,7 @@ button:hover {
     opacity: 0.85;
 }
 
-/*_generally for header, nav, and splash-images on each page_*/
+/*_generally for header, nav, and splash-images on each page___________________*/
 
 header {
     height: auto;
@@ -145,7 +148,7 @@ nav a:last-of-type {
     position: relative;
 }
 
-/*_generally for footer on all pages_*/
+/*_generally for footer on all pages___________________________________*/
 
 footer {
     height: auto;
@@ -179,10 +182,6 @@ footer img {
 }
 
 
-
-
-
-
 /*_header fonts_*/
 
 h1,
@@ -196,7 +195,7 @@ p {
     font-family: var(--text-font);
 }
 
-/*_home-page_______________________________________________*/
+/*_front-page_______________________________________________________________________________________________________*/
 
 #intro {
     margin: auto;
@@ -240,7 +239,7 @@ h1 {
     font-size: 1.2rem;
 }
 
-/*_VIDEO____________________________________________________________________*/
+/*_VIDEO__________________________________________________________________*/
 video {
     position: absolute;
     right: 0;
@@ -249,7 +248,7 @@ video {
     min-height: 100%;
 }
 
-/*_front page sections (serives, work, costumers)_*/
+/*_front page sections (serives, work, costumers)__________________________*/
 
 .fp_element {
     width: 100vw;
@@ -278,7 +277,7 @@ video {
     line-height: 170%;
 }
 
-/*_my services section_*/
+/*_my services section_____________________________________________________*/
 
 #my-services {
     display: grid;
@@ -318,7 +317,7 @@ video {
     line-height: 170%;
 }
 
-/*_my work section_*/
+/*_my work section____________________________________________________*/
 
 #my-work {
     display: grid;
@@ -391,7 +390,7 @@ video {
     opacity: 0.8;
 }
 
-/*_customer review section_*/
+/*_customer review section____________________________________________________________*/
 
 #customers {
     display: grid;
@@ -461,6 +460,8 @@ video {
     scroll-behavior: smooth;
 }
 
+/*_MEDIA QUERIES____________________________________________________________________________________________________________________*/
+
 @media only screen and (min-width: 900px) {
 
     /*_code to hide scroolbar in #containerReviews and #containerProjects is taken from w3schools*/
@@ -481,8 +482,6 @@ video {
 
     /*_end of code from w3schools_*/
 }
-
-/*_MEDIA QUERIES___________________________________________________*/
 
 /*_font-size_*/
 @media only screen and (max-width: 850px) {
@@ -515,7 +514,6 @@ video {
 }
 
 /*_front page changes_*/
-
 @media only screen and (max-width: 850px) {
     #intro p {
         padding: 0 15px 15px 15px;
@@ -524,7 +522,6 @@ video {
     nav div a {
         font-size: 80%;
     }
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -580,17 +577,15 @@ video {
     }
 }
 
-
 /*_footer when screen less than 850px wide_*/
 @media only screen and (max-width: 650px) {
     footer {
         flex-direction: column;
         align-items: center;
     }
-
 }
 
-/*_Burger Menu when screen less than 1150px wide_*/
+/*_Burger Menu when screen less than 1150px wide___________________________*/
 @media only screen and (max-width: 1150px) {
     nav {
         align-items: flex-start;
@@ -631,7 +626,6 @@ video {
     }
 }
 
-
 /*_Arrows to scroll through projects disappears at 900px and scrollbar appears again_*/
 @media only screen and (max-width: 900px) {
 
@@ -647,25 +641,13 @@ video {
         display: block;
     }
 
-    /* show scrollbar for IE, Edge and Firefox */
-    #containerReviews,
-    #containerProjects {
-        /*
-        -ms-overflow-style: auto;*/
-        /* IE and Edge */
-        /*
-        scrollbar-width: auto;*/
-        /* Firefox */
-    }
-
     #my-work #containerProjects,
     #containerReviews {
         width: 90vw;
     }
 }
 
-/*_resize logo in top when screen less than 500px_*/
-
+/*_resize logo in top when screen less than 560px_*/
 @media only screen and (max-width: 560px) {
     #home-but {
         width: 75px;
@@ -684,9 +666,9 @@ video {
     nav button {
         margin-top: -30px;
     }
-
 }
 
+/*_logo smaller when screen smaller_*/
 @media only screen and (max-width: 420px) {
     #home-but {
         width: 50px;
@@ -697,9 +679,9 @@ video {
     #start_nav h2 {
         padding: 5px;
     }
-
 }
 
+/*_changes when the screen is very small__hide the h2 in the menu_*/
 @media only screen and (max-width: 360px) {
 
     #start_nav h2 {

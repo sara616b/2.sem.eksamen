@@ -11,14 +11,20 @@
 </head>
 
 <body>
+    <!--header with navigation/menuline and div for splash-video-->
     <header>
         <nav>
+            <!--because of the way this page loads in our js the link to the frontpage needs a hashtag at the end-->
             <a href="index.html#" id="start_nav">
+                <!--logo button and h2 leads to frontpage-->
                 <img id="home-but" src="assets/logo_ikon.png" alt="logo for V-Studio">
                 <h2>// Graphic Designer</h2>
             </a>
+            <!--this section is the 'real' menu links which shifts from line in top to burger menu acording to screensize-->
             <section>
+                <!--the class 'hidden' is display:none on bigger screens but display:block on smaller screens-->
                 <button class="hidden">☰</button>
+                <!--'hidemenu' will be hidden on smaller screens untill button above is clicked-->
                 <div class="hidemenu">
                     <a href="index.html#my-servicessec" class="subNav">My Services</a>
                     <a href="index.html#my-worksec" class="subNav">My Work</a>
@@ -28,21 +34,26 @@
                 </div>
             </section>
         </nav>
+        <!--splash video src inserted with js, it's muted becuse that allows autoplay on some browsers and it loops-->
         <div class="splash">
             <video src="" muted autoplay loop></video>
         </div>
     </header>
+
+    <!--main is all the content of the page-->
     <main>
         <!--Content comes from wordpress page: 'V-studio' h1=title and p=content-->
         <section id="intro">
             <h1></h1>
             <div></div>
         </section>
+
         <!--container for front page elements inserted with js-->
         <section id="container">
-
         </section>
     </main>
+
+    <!--footer is also a global element-->
     <footer>
         <div class="foot-column">
             <p><strong>V-Studio</strong><br> <br>Adresse 1<br>1100 København N<br><br>Tlf: 12 34 56 78<br>Mail: mail@vstudio.dk</p>
@@ -54,6 +65,7 @@
         </div>
         <div class="foot-column">
             <p><strong>Find me here</strong></p>
+            <!--so-me buttons doesn't link anywhere since this is a prototype-->
             <div class="foot-so-me">
                 <img src="assets/facebook_icon.png" alt="facebook">
                 <img src="assets/instagram_icon.png" alt="instagram">
@@ -74,11 +86,10 @@
         </section>
     </template>
 
-    <!--template for the content-->
+    <!--template for the content ei. the individual services and projects-->
     <template id="content_temp">
         <section>
             <img src="" alt="icon">
-
             <div>
                 <h3></h3>
                 <div></div>
@@ -95,8 +106,9 @@
         </section>
     </template>
 
-
+    <!--script that controls the content and makes sure to jump to the right part of the page on load-->
     <script src="js/frontpage.js"></script>
+    <!--script that controls the burgermenu and makes sure that button works-->
     <script src="js/menu.js"></script>
 </body>
 

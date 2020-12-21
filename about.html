@@ -12,14 +12,20 @@
 </head>
 
 <body>
+    <!--header with navigation/menuline and div for splash-video-->
     <header>
+        <!--global navigation-->
         <nav>
+            <!--logo and h2 links to front page '#' at the end is important for the way the front page loads-->
             <a href="index.html#" id="start_nav">
                 <img id="home-but" src="assets/logo_ikon.png" alt="logo for V-Studio">
                 <h2>// Graphic Designer</h2>
             </a>
+            <!--this section is the 'real' menu links which shifts from line in top to burger menu acording to screensize-->
             <section>
+                <!--the class 'hidden' is display:none on bigger screens but display:block on smaller screens-->
                 <button class="hidden">☰</button>
+                <!--'hidemenu' will be hidden on smaller screens untill button above is clicked-->
                 <div class="hidemenu">
                     <a href="index.html#my-servicessec" class="subNav">My Services</a>
                     <a href="index.html#my-worksec" class="subNav">My Work</a>
@@ -29,16 +35,20 @@
                 </div>
             </section>
         </nav>
+        <!--container for splash image, background image set with javascript with the image from the wordpress page-->
         <div class="splash">
         </div>
     </header>
+
+    <!--all the 'real' content is in the main section-->
     <main>
+        <!--h1 and introtext is inserted with js from wordpress-->
         <section id="intro">
             <h1></h1>
             <div></div>
         </section>
+        <!--the individual 'posts' from wordpress 'about-info' is inserted here with js via the template below-->
         <section id="about">
-
         </section>
 
     </main>
@@ -50,6 +60,7 @@
         </section>
     </template>
 
+    <!--global footer-->
     <footer>
         <div class="foot-column">
             <p><strong>V-Studio</strong><br> <br>Adresse 1<br>1100 København N<br><br>Tlf: 12 34 56 78<br>Mail: mail@vstudio.dk</p>
@@ -68,7 +79,9 @@
             </div>
         </div>
     </footer>
+    <!--script that controls the content that's inserted from wordpress-->
     <script src="js/about.js"></script>
+    <!--script that controls the burgermenu and makes sure that button works-->
     <script src="js/menu.js"></script>
 </body>
 

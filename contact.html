@@ -12,14 +12,20 @@
 </head>
 
 <body>
+    <!--header with navigation/menuline and div for splash-video-->
     <header>
+        <!--global navigation-->
         <nav>
+            <!--logo and h2 links to front page '#' at the end is important for the way the front page loads-->
             <a href="index.html#" id="start_nav">
                 <img id="home-but" src="assets/logo_ikon.png" alt="logo for V-Studio">
                 <h2>// Graphic Designer</h2>
             </a>
+            <!--this section is the 'real' menu links which shifts from line in top to burger menu acording to screensize-->
             <section>
+                <!--the class 'hidden' is display:none on bigger screens but display:block on smaller screens-->
                 <button class="hidden">☰</button>
+                <!--'hidemenu' will be hidden on smaller screens untill button above is clicked-->
                 <div class="hidemenu">
                     <a href="index.html#my-servicessec" class="subNav">My Services</a>
                     <a href="index.html#my-worksec" class="subNav">My Work</a>
@@ -29,15 +35,21 @@
                 </div>
             </section>
         </nav>
+        <!--container for splash image, background image set with javascript with the image from the wordpress page-->
         <div class="splash">
         </div>
     </header>
+
+    <!--all the content is in this main section-->
     <main>
+       <!--content inserted with js from the wordpress page 'get in touch'-->
         <section id="intro">
             <h1></h1>
             <div></div>
         </section>
+        <!--section with the real content of the page, all is hardcoded-->
         <section id="info">
+           <!--a formular for her customers to get into contact-->
             <div id="formular">
                 <h2>Send me a message</h2>
                 <input type="text" placeholder="Your name">
@@ -47,6 +59,7 @@
                 <input type="text" placeholder="Message" style="height: 100px;">
                 <button>Send</button>
             </div>
+            <!--sidebar with contact information-->
             <div id="sidebar">
                 <h2>Contact me</h2>
                 <div class="contact_info">
@@ -64,6 +77,8 @@
             </div>
         </section>
     </main>
+
+    <!--global footer-->
     <footer>
         <div class="foot-column">
             <p><strong>V-Studio</strong><br> <br>Adresse 1<br>1100 København N<br><br>Tlf: 12 34 56 78<br>Mail: mail@vstudio.dk</p>
@@ -82,7 +97,10 @@
             </div>
         </div>
     </footer>
+
+    <!--script that controls the splash image and title-->
     <script src="js/contact.js"></script>
+        <!--script that controls the burgermenu and makes sure that button works-->
     <script src="js/menu.js"></script>
 </body>
 

@@ -22,9 +22,9 @@ async function getData() {
 async function show(data) {
     console.log("show");
 
-    //featured image as background in splash
-    //document.querySelector(".splash").style.backgroundImage = "url(" + data.splash.guid + ")";
+    //video on front page setup
     document.querySelector("video").src = "assets/BG_video.mp4";
+    //force to play in browsers that doesn't support 'autoplay'
     document.querySelector("video").play();
     document.querySelector("video").playbackRate = 0.7;
 
@@ -73,6 +73,7 @@ async function addContentFP(name) {
     let i = 0;
     let wrapper = document.querySelector("#" + name);
 
+    //my services-section is set up
     if (name == "my-services") {
         console.log("services start");
 
@@ -101,6 +102,7 @@ async function addContentFP(name) {
         });
 
     } else if (name == "my-work") {
+        //my work section is set up
         console.log("my work start");
 
         //get wordpress data
@@ -115,7 +117,7 @@ async function addContentFP(name) {
         projectButtonLeft.classList.add("projectbuttonleft");
         wrapper.appendChild(projectButtonLeft);
 
-        //get reviews and add to section#containerReviews
+        //get projects and add to the section
         let containerProjects = document.createElement("section");
         containerProjects.id = "containerProjects";
         wrapper.appendChild(containerProjects);
@@ -143,10 +145,9 @@ async function addContentFP(name) {
         wrapper.appendChild(projectButtonRight);
 
         //add eventlisteners to arrows for them to scroll through reviews
-
+        //variable that tracks how far you've scrolled through the projects
         let increment = 0;
         let projectWidth = document.querySelector(".project").offsetWidth;
-        console.log(projectWidth);
         document.querySelector("#containerProjects").scrollLeft = 0;
         projectButtonLeft.style.opacity = 0.5;
 
@@ -186,14 +187,14 @@ async function addContentFP(name) {
         responsSec = await fetch(linkSec);
         jsonSec = await responsSec.json();
 
-        //add button left
+        //først tilføjer vi et billede til wrapper, som er i sektionen .content og sætter kilden til at være en svg af en pil
         let arrowButtonLeft = document.createElement("img");
         arrowButtonLeft.alt = "button";
         arrowButtonLeft.src = "assets/next.svg";
         arrowButtonLeft.classList.add("arrowbuttonleft");
         wrapper.appendChild(arrowButtonLeft);
 
-        //get reviews and add to section#containerReviews
+        //kreerer en sektion, tilføjer den til wrapper og indsætter anmeldelserne via samme princip som ovenfor
         let containerReviews = document.createElement("section");
         containerReviews.id = "containerReviews";
         wrapper.appendChild(containerReviews);
@@ -221,27 +222,30 @@ async function addContentFP(name) {
         arrowButtonRight.classList.add("arrowbuttonright");
         wrapper.appendChild(arrowButtonRight);
 
-        //add eventlisteners to arrows for them to scroll through reviews
-
-        let increment = 0;
-        let reviewWidth = document.querySelector(".review").offsetWidth;
-        console.log(reviewWidth);
-        containerReviews.scrollLeft = 0;
-        arrowButtonLeft.style.opacity = 0.5;
+        //tilføjer eventlisteners til pile-billederne til at lytte efter klik og tillade at man bladrer igennem anmeldelserne, men først defineres nogle variabler
+        let increment = 0; //denne bruges til at vide hvor langt hen man har scrollet. For hver gang man trykker på en af pilene trækkes bredden af boksen fra eller lægges til. Når den så er nået til hele længden af overflowet bliver den højre pil sat ned I gennemsigtighed
+        let reviewWidth = document.querySelector(".review").offsetWidth; //bredde på .review
+        containerReviews.scrollLeft = 0; //Sørger for at de starter med at være scrollet helt til venstre når siden loades.
+        arrowButtonLeft.style.opacity = 0.5; //Så da den er scrollet helt til venstre skal den venstre pil have en gennemsigtighed på 0.5
 
         arrowButtonRight.addEventListener("click", function () {
             reviewWidth = document.querySelector(".review").offsetWidth;
+            //hvis den længde man har scrollet(increment) er mindre end længden af hele overflowet I containeren (som beregnes som antal anmeldelser gange længden på disse) så...
             if (increment < ((jsonSec.length - 1) * reviewWidth)) {
                 console.log("click scroll left");
-                containerReviews.scrollLeft += reviewWidth;
-                increment += reviewWidth;
+                containerReviews.scrollLeft += reviewWidth; //…scrolles der en anmeldelsesbredde længere hen
+                increment += reviewWidth; //...increment tilføjes den samme bredde
+
+                //og hvis increment har nået hele bredden af containeren og man altså har scrollet hele vejen til højre så...
                 if (increment == ((jsonSec.length - 1) * reviewWidth)) {
-                    arrowButtonRight.style.opacity = 0.5;
+                    arrowButtonRight.style.opacity = 0.5; //...sættes pilen til højre til en gennemsigtighed på 0.5
                     console.log("end reached");
                 }
-                arrowButtonLeft.style.opacity = 1;
+                arrowButtonLeft.style.opacity = 1; // når man jo har klikket sig til højre, så kan man sjovt nok også klikke sig til ventre igen, derfor skal den venstre pil være helt synlig
             }
         });
+
+        //på samme måde skal venstre pil også kunne klikkes på
         arrowButtonLeft.addEventListener("click", function () {
             reviewWidth = document.querySelector(".review").offsetWidth;
             if (increment > 0) {
@@ -257,7 +261,7 @@ async function addContentFP(name) {
         });
     }
 
-    //navigate to section via #
+    //navigate to section via # in href
     window.location.search = window.location.hash.substr(1);
 
 }
